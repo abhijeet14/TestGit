@@ -1,0 +1,47 @@
+Question:  what is swagger?
+Answer:    ummm…one min please…I heard somewhere…no clue..
+
+If you have same answer as I had on Friday… so let’s do it for swagger..
+
+Swagger UI is part of the Swagger project. The Swagger project allows you to produce, visualize and consume your OWN Restful services. 
+Swagger UI is a dependency-free collection of HTML, JavaScript, and CSS assets that dynamically generate beautiful documentation and sandbox from a Swagger-compliant API.
+As Swagger is a language-agnostic specification, with its declarative resource specification, 
+clients can easily understand and consume services without any prior knowledge of server implementation or access to the server code.
+
+I have created REST application “Spring-SwaggerUI”, which is placed in  “R:\Users\Abhijeet Jain”. It’s a maven project so you can import in your workplace. (ref snap-1)
+
+Steps to plug swagger in our project:
+
+1] add dependency “swagger-springmvc” in pom (ref snap-swagger-pom).
+2] download swagger UI from  https://github.com/swagger-api/swagger-ui and place it in resource folder.
+3] Define “swagger.properties” file with “documentation.services.version” and “documentation.services.basePath” as mentioned in project.
+4] add configuration in your servlet-context.xml (snap-4)
+
+In EmployeeRestController.java, add swagger annotation   like @api, @apioperation. As swagger has many annotation for many purpose. 
+Example:
+
+@Api(basePath = "/rest", value = "employeesInfo", description = "employeesInfo")
+
+&
+
+@ApiOperation(value = "Get Employee By ID", notes = "Get Employee By ID")      
+    @ApiError(code = 400, reason = "Invalid ID supplied")
+
+It’s ready…only you have to run maven command- mvn install…
+Deploy your generated snapshot to any web server.
+
+Now…open URL:  http://localhost:8080/Spring-SwaggerUI/swagger-ui/index.html .. It will look like (snap-2).
+Enter  http://localhost:8080/Spring-SwaggerUI/api-docs in search box. It will display your all operation.
+
+You can expend operation and check with description and schema, even you can test it. ( we can add Oath in our project also for two way security) (snap-3)
+
+In Spring you can add separation configuration file with other functionality. It’s a sample application just for presentation.
+I have added JAXB (xml representation also) , which I had not cover with this slides.
+
+Please add more inputs for this topics so we can use extensively. If I missed anything then rectify me.
+
+Happy Learning  
+
+
+Thanks & Regards,
+Abhijeet Jain
