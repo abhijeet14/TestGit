@@ -1,0 +1,30 @@
+Hi Team,
+
+I have used Git Commit animation view with help of  “Gource”.  (R:\Users\Abhijeet Jain\Gource) for windows also available for other operating system.
+Which can be download here https://code.google.com/p/gource/wiki/Downloads
+You have to only set environment setting or set path directly to command prompt.
+
+That’s It.
+
+Now run gource –help  and take many option to watch commit flow.
+
+Example:
+gource -s 1  --user-image-dir  C:\\abhijeet\\pic  C:\JavaAppl\git_trunk\Q2-Dev\risk-insurance\frontend-project
+
+user-image-dir  ->  Dir containing images to use as avatars
+
+You have to provide your project folder location . (example: C:\JavaAppl\git_trunk\Q2-Dev\risk-insurance\frontend-project)
+
+Finally you can watch animation video view. you can record video and specified Date duration also. 
+Please find attached  sample video.
+Happy Fun learning with GIT animation.
+
+
+gource -1024x768 --user-image-dir  C:\\abhijeet\\pic  C:\JavaAppl\git_trunk\Q2-Dev\risk-insurance\frontend-project --stop-position 1.0 --highlight-all-users --hide-filenames --seconds-per-day 5 --output-framerate 60 --output-ppm-stream C:\\abhijeet\\abhijeet.ppm
+
+ffmpeg -y -r 16 -f image2pipe -vcodec ppm -i C:\\abhijeet\\abhijeet.ppm  -vcodec wmv1 -r 60 -qscale 0 C:\\abhijeet\\abhijeet.wmv
+
+
+
+Thanks,
+Abhijeet Jain
